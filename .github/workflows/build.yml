@@ -22,6 +22,11 @@ jobs:
         mkdir dist
         cargo install tauri-cli
         cargo tauri build
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: tauri-chatgpt-macos
+        path: release/bundle
 
   build_macos_m2:
     runs-on: macos-latest
@@ -37,20 +42,31 @@ jobs:
         mkdir dist
         cargo install tauri-cli
         cargo tauri build --target aarch64-apple-darwin
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: tauri-chatgpt-macos-aarch64
+        path: release/bundle
 
   build_ubuntu:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Install GTK+ 3
+      run: sudo apt-get update && sudo apt-get install -y libgtk-3-dev
     - name: Install Rust
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
         echo "$HOME/.cargo/bin" >> $GITHUB_PATH
     - name: Build Tauri App
       run: |
-        mkdir dist
         cargo install tauri-cli
         cargo tauri build
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: tauri-chatgpt-ubuntu
+        path: release/bundle
 
   build_windows:
     runs-on: windows-latest
@@ -66,3 +82,8 @@ jobs:
         mkdir dist
         cargo install tauri-cli
         cargo tauri build
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: tauri-chatgpt-windows
+        path: release/bundle
