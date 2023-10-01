@@ -1,7 +1,49 @@
 ## tauri-chatgpt
 
-Just released a new desktop app – a standalone ChatGPT client! Built with Tauri, you can now interact with ChatGPT directly from your desktop, no browser needed. Experience a smoother and more direct connection! Download and try it out
-
-刚刚发布了一款新的桌面应用 —— 独立的ChatGPT客户端！使用Tauri构建，现在你可以直接从桌面轻松与ChatGPT交互。体验更加流畅且无需浏览器！下载试用
+A standalone desktop application for ChatGPT, built using Tauri.
 
 ![](readme_files/1.jpg)
+
+## Features
+* **Native Experience**: Interact with ChatGPT directly from your desktop without needing a browser.
+* **Fast and Lightweight**: Built using Tauri, the application is light on resources and starts up quickly.
+* **Cross-Platform**: Available for Windows, macOS, and Linux.
+
+## Installation
+
+### Pre-built binaries
+You can download the pre-built binaries for your platform from the [Releases](https://github.com/litongjava/tauri-chatgpt/releases) page.
+
+### Building from Source
+
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/litongjava/tauri-chatgpt
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd tauri-chatgpt
+    ```
+3. Install tauri:
+    ```bash
+    cargo install tauri-cli
+    ```
+4. Build the application:
+    ```bash
+    cargo tauri build
+    ```
+
+## Usage
+
+1. Launch the application.
+2. Interact with ChatGPT directly from the app interface.
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+
+## License
+
+[MIT License](LICENSE)
+
+
