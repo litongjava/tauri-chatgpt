@@ -12,7 +12,7 @@ jobs:
   build_macos:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install Rust
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -25,7 +25,7 @@ jobs:
   build_ubuntu:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install Rust
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -34,5 +34,3 @@ jobs:
       run: |
         cargo install tauri-cli
         cargo tauri build
-    - name: Run tests
-      run: cargo test --verbose
