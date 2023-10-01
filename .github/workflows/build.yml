@@ -17,10 +17,24 @@ jobs:
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
         echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-    - name: Build Tauri App
+    - name: Build Tauri App (x86_64)
       run: |
         cargo install tauri-cli
         cargo tauri build
+
+  build_macos_m2:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Rust and target for ARM64
+      run: |
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+        rustup target add aarch64-apple-darwin
+    - name: Build Tauri App (ARM64)
+      run: |
+        cargo install tauri-cli
+        cargo tauri build --target aarch64-apple-darwin
 
   build_ubuntu:
     runs-on: ubuntu-latest
@@ -30,6 +44,20 @@ jobs:
       run: |
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
         echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+    - name: Build Tauri App
+      run: |
+        cargo install tauri-cli
+        cargo tauri build
+
+  build_windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Rust
+      run: |
+        choco install rustup.install
+        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+        echo "$USERPROFILE\\.cargo\\bin" >> $GITHUB_PATH
     - name: Build Tauri App
       run: |
         cargo install tauri-cli
