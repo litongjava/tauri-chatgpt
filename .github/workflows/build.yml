@@ -19,7 +19,7 @@ jobs:
         echo "$HOME/.cargo/bin" >> $GITHUB_PATH
     - name: Build Tauri App (x86_64)
       run: |
-        makdir dist
+        mkdir dist
         cargo install tauri-cli
         cargo tauri build
 
@@ -34,7 +34,7 @@ jobs:
         rustup target add aarch64-apple-darwin
     - name: Build Tauri App (ARM64)
       run: |
-        makdir dist
+        mkdir dist
         cargo install tauri-cli
         cargo tauri build --target aarch64-apple-darwin
 
@@ -48,7 +48,7 @@ jobs:
         echo "$HOME/.cargo/bin" >> $GITHUB_PATH
     - name: Build Tauri App
       run: |
-        makdir dist
+        mkdir dist
         cargo install tauri-cli
         cargo tauri build
 
@@ -63,6 +63,6 @@ jobs:
         echo "$USERPROFILE\\.cargo\\bin" >> $GITHUB_PATH
     - name: Build Tauri App
       run: |
-        makdir dist
+        mkdir dist
         cargo install tauri-cli
         cargo tauri build
