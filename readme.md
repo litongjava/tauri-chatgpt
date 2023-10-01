@@ -2,7 +2,7 @@
 
 A standalone desktop application for ChatGPT, built using Tauri.
 
-![](readme_files/1.jpg)
+![1](readme_files/1.png)
 
 ## Features
 * **Native Experience**: Interact with ChatGPT directly from your desktop without needing a browser.
