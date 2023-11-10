@@ -54,10 +54,10 @@
     },
     "windows": [
       {
-        "fullscreen": false,
-        "height": 1000,
-        "resizable": true,
         "title": "Tauri ChatGPT",
+        "fullscreen": false,
+        "resizable": true,
+        "height": 1000,
         "width": 1500,
         "url": "https://chat.openai.com/",
         "x": 100,
