@@ -38,6 +38,9 @@ You can download the pre-built binaries for your platform from the [Releases](ht
 1. Launch the application.
 2. Interact with ChatGPT directly from the app interface.
 
+## Cache
+Cache Folder
+- windows C:\Users\Administrator\AppData\Local\com.litongjava.tauri.chagpt
 ## Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
